@@ -11,7 +11,7 @@ import Admin from "./pages/admin/Admin.jsx";
 import Home from "./pages/home/Home";
 import MovieDetail from "./pages/movie-detail/MovieDetail";
 import SelectTheatre from "./pages/select-theatre/SelectTheatre";
-import SelectSeats from "./select-seats/selectSeats";
+import SelectSeats from "./pages/select-seats/selectSeats";
 
 function App() {
     return (
