@@ -29,7 +29,7 @@ const Header = props => {
             <div>
                 <a
                     className='display-6 text-danger py-1 remove-underline'
-                    href='#'
+                    href='# '
                     onClick={() => {
                         navigate("/");
                     }}

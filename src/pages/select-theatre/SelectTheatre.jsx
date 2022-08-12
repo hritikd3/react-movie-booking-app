@@ -30,7 +30,7 @@ const SelectTheatre = () => {
             })
             .catch(err => {
                 console.log(err.message);
-            });
+            }); 
     };
 
     const fetchAllTheatres = () => {
@@ -51,6 +51,7 @@ const SelectTheatre = () => {
 
     // give default empty string values to variables if they are undefined
     const {
+        
         trailerUrl = "",
         posterUrl = "",
         name = "",
@@ -90,20 +91,21 @@ const SelectTheatre = () => {
                         const { name, _id } = theatre;
 
                         return (
-                            <Link
-                                to={`/movie/${movieId}/${_id}`}
-                                className='theatre-item row p-4'
-                            >
-                                <h4 className='col-sm-4'>{name}</h4>
-                                <h4 className='text-danger col-sm-4'>
-                                    <i className='bi bi-phone-fill text-danger'></i>
-                                    m-Ticket
-                                </h4>
-                                <h4 className='text-success col-sm-4'>
-                                    <i className='bi bi-cup-straw text-success'></i>
-                                    Food & Beverages
-                                </h4>
-                            </Link>
+                          <Link
+                            key={theatre._id}
+                            to={`/movie/${movieId}/${_id}`}
+                            className="theatre-item row p-4"
+                          >
+                            <h4 className="col-sm-4">{name}</h4>
+                            <h4 className="text-danger col-sm-4">
+                              <i className="bi bi-phone-fill text-danger"></i>
+                              m-Ticket
+                            </h4>
+                            <h4 className="text-success col-sm-4">
+                              <i className="bi bi-cup-straw text-success"></i>
+                              Food & Beverages
+                            </h4>
+                          </Link>
                         );
                     })}
                 </div>

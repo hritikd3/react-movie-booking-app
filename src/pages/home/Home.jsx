@@ -22,6 +22,7 @@ const Home = () => {
         getAllMovies()
             .then(res => {
                 const { data, status } = res;
+              
                 if (status === 200) {
                     setMovies(data);
                     setAllMovies(data);
@@ -30,11 +31,13 @@ const Home = () => {
             })
             .catch(err => {
                 setLoading(false);
+                console.log(err.response)
             });
     }, []);
 
     const filterMoviesBySearch = searchText => {
         const filteredMovies = allmovies.filter(movie => {
+            //for input search
             return movie.name.toLowerCase().includes(searchText.toLowerCase());
         });
         setMovies(filteredMovies);
@@ -60,7 +63,7 @@ const Home = () => {
                     <div className='row  '>
                         {movies.map(movie => {
                             return (
-                                <div
+                                <div key={movie._id}
                                     className='col-lg-3 col-md-4 col-sm-6 movie-tile bg-dark text-light'
                                     onClick={() => {
                                         handleGotoDetailPage(movie._id);

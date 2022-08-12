@@ -54,7 +54,10 @@ const Cinema = (props) => {
       <div className="my-5">
         {cinemaState.map((cinemaRow, rowIndex) => {
           return (
-            <div className="cinema-main  d-flex justify-content-center">
+            <div
+              key={rowIndex}
+              className="cinema-main  d-flex justify-content-center"
+            >
               <div className="cinema-row row">
                 {cinemaRow.map((cinemaCol, colIndex) => {
                   const classNm =
@@ -64,6 +67,7 @@ const Cinema = (props) => {
 
                   return (
                     <div
+                      key={colIndex}
                       className={classNm}
                       onClick={() => {
                         handleSelectSeat(rowIndex, colIndex);
