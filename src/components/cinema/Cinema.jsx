@@ -93,7 +93,7 @@ const Cinema = (props) => {
         disabled={selectedSeats.length === 0}
         onClick={handleProceedToPayment}
       >
-        Proceed to Payment
+        Proceed to Payment.
       </button>
     </>
   );
